@@ -1,6 +1,6 @@
 package Carta
 
-class CartaSpain: CartaGenerica() {
+class CartaSpain(): CartaGenerica() {
     override var palo: String = ""
         get() {
             return field
@@ -28,14 +28,20 @@ class CartaSpain: CartaGenerica() {
             }
 
         }
+    constructor(palo:String, numero: Int):this(){
+        this.palo = palo
+        this.numero = numero
+    }
 
-    override fun mostrarCarta() {
+
+    override fun mostrarCarta(): String {
         var numero = ""
         when (this.numero){
             10 -> numero = "Sota"
             11 -> numero = "Caballo"
             12 -> numero = "Rey"
+            else -> numero = this.numero.toString()
         }
-        println("La carta es el número $numero de $palo")
+        return "La carta es el número $numero de $palo"
     }
 }

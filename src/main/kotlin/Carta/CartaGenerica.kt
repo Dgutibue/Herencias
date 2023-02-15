@@ -9,7 +9,7 @@ open class CartaGenerica() {
             field = value
             if(field == ""){
                 do {
-                    println("Este campo no puede estar vacio")
+                    println("El palo no puede estar vacio")
                     field = readln()
                 }while(field == "")
             }
@@ -22,7 +22,7 @@ open class CartaGenerica() {
             field = value
             if(field == 0){
                 do {
-                    println("Este campo no puede ser 0")
+                    println("El número no puede ser 0")
                     field = readln().toInt()
                 }while(field == 0)
             }
@@ -32,8 +32,8 @@ open class CartaGenerica() {
         this.numero = numero
     }
 
-    open fun mostrarCarta(){
-        println("La carta es el número $numero de $palo")
+    open fun mostrarCarta(): String{
+        return "La carta es el número $numero de $palo"
     }
 
 }
