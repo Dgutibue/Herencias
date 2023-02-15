@@ -1,0 +1,4 @@
+package Carta
+
+class PruebaCarta {
+}
