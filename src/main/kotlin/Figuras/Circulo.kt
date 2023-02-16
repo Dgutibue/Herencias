@@ -1,6 +1,6 @@
 package Figuras
 import kotlin.math.*
-class Circulo: Figura() {
+class Circulo: Figura(), Printable {
     var radio: Double = 0.0
         get() {
             return field
@@ -25,5 +25,8 @@ class Circulo: Figura() {
     override fun calculaArea(): Double{
         var area = PI * sqrt(radio)
         return area
+    }
+    override fun printScreen(){
+        println(radio)
     }
 }
