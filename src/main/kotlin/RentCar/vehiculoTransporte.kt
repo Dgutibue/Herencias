@@ -1,6 +1,6 @@
 package RentCar
 
-abstract class vehiculoTransporte: Vehiculo {
+abstract class vehiculoTransporte(): Vehiculo() {
     var numeroPlazas: Int = 0
         get() {
             return field
@@ -14,7 +14,7 @@ abstract class vehiculoTransporte: Vehiculo {
                 }while (field <=0)
             }
         }
-    constructor(matricula: String, duracion: Int, numeroPlazas: Int):super(matricula, duracion){
+    constructor(matricula: String, duracion: Int, numeroPlazas: Int):this(){
         this.numeroPlazas = numeroPlazas
     }
 
@@ -22,7 +22,7 @@ abstract class vehiculoTransporte: Vehiculo {
         TODO("Not yet implemented")
     }
 
-    override fun recibo() {
-        println("Matrícula: $matricula\nDuración: $duracion\nPlazas: $numeroPlazas\nimporte: ${alquiler()}")
+    override fun recibo(): String {
+        return "Matrícula: $matricula\nDuración: $duracion\nPlazas: $numeroPlazas\nimporte: ${alquiler()}"
     }
 }

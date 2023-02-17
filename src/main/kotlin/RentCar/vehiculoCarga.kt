@@ -1,8 +1,8 @@
 package RentCar
 
-abstract class vehiculoCarga: Vehiculo {
+abstract class vehiculoCarga(): Vehiculo() {
     var tara: Double = 0.0
-    constructor(matricula: String, duracion: Int, tara: Double):super(matricula, duracion){
+    constructor(matricula: String, duracion: Int, tara: Double):this(){
         this.tara = tara
     }
 
@@ -10,7 +10,7 @@ abstract class vehiculoCarga: Vehiculo {
         TODO("Not yet implemented")
     }
 
-    override fun recibo() {
-        println("Matrícula: $matricula\nDuración: $duracion\nTara: $tara\nimporte: ${alquiler()}")
+    override fun recibo(): String {
+        return "Matrícula: $matricula\nDuración: $duracion\nTara: $tara\nimporte: ${alquiler()}"
     }
 }
