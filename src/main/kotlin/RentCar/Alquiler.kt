@@ -80,6 +80,7 @@ class Alquiler(): Alquilable {
         println("Total alquiler: ${importeTotal()}€")
     }
 
+
     fun importe(pos: Vehiculo): String{
         return pos.recibo()
     }
