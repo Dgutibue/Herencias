@@ -2,8 +2,38 @@ package MyOnlineShop
 
 abstract class Producto {
     var regularPrice:Double
-    constructor(regularInitialPrice:Double){
+    var IVA: Int
+        get() {
+            return field
+        }
+        set(value) {
+            val validos = listOf<Int>(0,4, 10, 21)
+            field = value
+            do{
+                if(field !in validos){
+                    println("Escriba un IVA válido")
+                    field = readln().toInt()
+                }
+            }while (field !in validos)
+        }
+    var numeroProducto: Int
+        get() {
+            return field
+        }
+        set(value) {
+
+            field = value
+            do{
+                if(field <= 0){
+                    println("Debe de al menos un producto")
+                    field = readln().toInt()/100 + 1
+                }
+            }while (field <= 0)
+        }
+    constructor(regularInitialPrice:Double, IVA: Int, numeroProducto: Int){
         regularPrice=regularInitialPrice
+        this.IVA = IVA
+        this.numeroProducto =  numeroProducto
     }
     abstract fun computeSalePrice():Double
     abstract fun computeSpecialCustomerPrice(): Double
