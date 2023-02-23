@@ -1,9 +1,9 @@
 package MyOnlineShop
 
 class Book: Producto {
-    var publisher: String
-    var yearPublished: Int
-    constructor(regularPrice: Double, IVA: Int, numeroProducto: Int, publisher: String, yearPublished: Int):super(regularPrice, IVA, numeroProducto){
+    protected var publisher: String
+    protected var yearPublished: Int
+    constructor(regularPrice: Double, IVA: Int, publisher: String, yearPublished: Int):super(regularPrice, IVA){
         this.publisher = publisher
         this.yearPublished = yearPublished
     }

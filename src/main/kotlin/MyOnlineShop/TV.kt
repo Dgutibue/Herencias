@@ -1,8 +1,8 @@
 package MyOnlineShop
 
 class TV: Electronicos {
-    var tamanio: Int
-    constructor(regularPrice: Double, IVA: Int, numeroProducto: Int, manaufactura: String, tamanio: Int): super(regularPrice, IVA, numeroProducto, manaufactura){
+    protected var tamanio: Int
+    constructor(regularPrice: Double, IVA: Int, manaufactura: String, tamanio: Int): super(regularPrice, IVA, manaufactura){
         this.tamanio = tamanio
     }
     override fun computeSalePrice():Double{

@@ -7,14 +7,17 @@ abstract class Producto {
             return field
         }
         set(value) {
-            val validos = listOf<Int>(0,4, 10, 21)
+
             field = value
+
             do{
-                if(field !in validos){
+                if(field !in tramosIVA){
                     println("Escriba un IVA válido")
                     field = readln().toInt()
                 }
-            }while (field !in validos)
+            }while (field !in tramosIVA)
+
+
         }
     var numeroProducto: Int
         get() {
@@ -26,14 +29,21 @@ abstract class Producto {
             do{
                 if(field <= 0){
                     println("Debe de al menos un producto")
-                    field = readln().toInt()/100 + 1
+                    field = readln().toInt()
                 }
             }while (field <= 0)
         }
-    constructor(regularInitialPrice:Double, IVA: Int, numeroProducto: Int){
+
+    companion object {
+        val tramosIVA: IntArray = intArrayOf(0,4, 10, 21)
+        var contador: Int = 1
+
+    }
+    constructor(regularInitialPrice:Double, IVA: Int){
         regularPrice=regularInitialPrice
         this.IVA = IVA
-        this.numeroProducto =  numeroProducto
+        this.numeroProducto =  contador
+        contador += 1
     }
     abstract fun computeSalePrice():Double
     abstract fun computeSpecialCustomerPrice(): Double

@@ -1,8 +1,8 @@
 package MyOnlineShop
 
 abstract class Electronicos: Producto {
-    var manufactura: String
-    constructor(regularPrice: Double, IVA: Int, numeroProducto: Int, manufactura: String):super(regularPrice, numeroProducto, IVA){
+    protected var manufactura: String
+    constructor(regularPrice: Double, IVA: Int, manufactura: String):super(regularPrice, IVA){
         this.manufactura = manufactura
     }
 }

@@ -1,7 +1,7 @@
 package MyOnlineShop
 
 class Camara: Electronicos {
-    constructor(regularPrice: Double, IVA: Int, numeroProducto: Int, manufactura: String): super(regularPrice, IVA, numeroProducto, manufactura)
+    constructor(regularPrice: Double, IVA: Int, manufactura: String): super(regularPrice, IVA, manufactura)
     override fun computeSalePrice():Double{
         var total = regularPrice * IVA * 0.7
         return total

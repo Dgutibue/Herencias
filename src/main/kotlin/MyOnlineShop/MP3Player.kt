@@ -1,8 +1,8 @@
 package MyOnlineShop
 
 class MP3Player: Electronicos {
-    var color: String
-    constructor(regularPrice: Double, IVA: Int, numeroProducto: Int, manufactura: String, color: String): super(regularPrice, IVA, numeroProducto, manufactura){
+    protected var color: String
+    constructor(regularPrice: Double, IVA: Int, manufactura: String, color: String): super(regularPrice, IVA, manufactura){
         this.color = color
     }
     override fun computeSalePrice():Double{
