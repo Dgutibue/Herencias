@@ -11,6 +11,6 @@ abstract class vehiculoCarga(): Vehiculo() {
     }
 
     override fun recibo(): String {
-        return "Matrícula: $matricula\nDuración: $duracion\nTara: $tara\nimporte: ${alquiler()}"
+        return "Matrícula: $matricula\nDuración: $duracion días\nTara: $tara Kg.\nimporte: ${alquiler()}€"
     }
 }
