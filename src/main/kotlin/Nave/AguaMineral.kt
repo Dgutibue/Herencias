@@ -1,7 +1,16 @@
 package Nave
 
 class AguaMineral(cantidadLitros: Double, precio: Double, marca: String, manantialOrigen: String): Bebida(cantidadLitros, precio, marca) {
-    var manantialOrigen: String
+    var manantialOrigen: String = ""
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+            if(field == ""){
+                println("Manantial de origen desconocido")
+            }
+        }
     init {
         this.cantidadLitros = cantidadLitros
         this.precio = precio

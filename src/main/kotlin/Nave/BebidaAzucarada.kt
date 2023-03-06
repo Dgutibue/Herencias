@@ -2,6 +2,16 @@ package Nave
 
 class BebidaAzucarada(cantidadLitros: Double, precio: Double, marca: String, porcentajeAzucar: Double, promocion: Boolean): Bebida(cantidadLitros, precio, marca) {
     var porcentajeAzucar: Double = 0.0
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+            while(field <= 0.0){
+                println("Este parámetro no puede ser 0 o menor que 0")
+                field = readln().toDouble()
+            }
+        }
     var promocion: Boolean
 
     init {
@@ -22,6 +32,6 @@ class BebidaAzucarada(cantidadLitros: Double, precio: Double, marca: String, por
     override fun mostrar(): String{
         var promo = ""
         if(promocion == true) promo = "Si" else promo = "No"
-        return "Información del producto\nIdentificación: $identificador\nCapacidad: $cantidadLitros\nPrecio: $precio\nMarca: $marca\nPorecentaje de azúcar: $porcentajeAzucar\nPromoción: $promo"
+        return "Información del producto\nIdentificación: $identificador\nCapacidad: $cantidadLitros\nPrecio: $precio\nMarca: $marca\nPorecentaje de azúcar: $porcentajeAzucar%\nPromoción: $promo"
     }
 }
