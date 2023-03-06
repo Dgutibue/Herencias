@@ -37,7 +37,8 @@ abstract class Bebida(cantidadLitros: Double, precio: Double, marca: String)  {
     protected var identificador: Int = 0
 
     constructor(otraBebida: Bebida): this(otraBebida.cantidadLitros, otraBebida.precio, otraBebida.marca){
-
+            this.identificador = otraBebida.identificador
+            contador --
     }
     companion object{
         private var contador: Int = 0

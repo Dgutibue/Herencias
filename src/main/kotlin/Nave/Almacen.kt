@@ -43,15 +43,19 @@ class Almacen {
     }
 
     fun agregarAmenor(bebida: Bebida) {
-        var pequenia = 1
+        var pequenia = mutableListOf<Int>()
         for (i in estanterias.values) {
-            if (i.size < pequenia) {
+            pequenia.add(i.size)
+            /*if (i.size < pequenia) {
                 pequenia = i.size
             }
+
+             */
         }
         for ((c, v) in estanterias) {
-            if (v.size == pequenia) {
+            if (v.size == pequenia.min()) {
                 estanterias[c]?.add(bebida)
+                break
             }
         }
     }
@@ -88,19 +92,40 @@ class Almacen {
                 }
             }
         }
-        fun mostrarInformacion(bebida: Bebida) {
-            println(bebida.mostrar())
-        }
 
-
-        fun mostrarEstanterias() {
-            for ((c, v) in estanterias) {
-                println("Inventario en el estante $c: ")
-                for (n in v) {
-                    println("${n.marca}")
-                }
+        fun eliminarMarca(marca: String){
+            for ((c,v) in estanterias){
+                v.removeIf { it.marca == marca }
             }
         }
+
+        fun borrarEstanteria(Estanteria: String) {
+            val listaBebidas = mutableListOf<Bebida>()
+            for ((c, v) in estanterias) {
+                if (c == Estanteria) {
+                    for (n in v) {
+                        listaBebidas.add(n)
+                    }
+                }
+            }
+            estanterias.remove(Estanteria)
+            for(i in listaBebidas){
+                agregarAmenor(i)
+            }
+        }
+            fun mostrarInformacion(bebida: Bebida) {
+                println(bebida.mostrar())
+            }
+
+
+            fun mostrarEstanterias() {
+                for ((c, v) in estanterias) {
+                    println("Inventario en el estante $c: ")
+                    for (n in v) {
+                        println("${n.marca}")
+                    }
+                }
+            }
 
 }
 /*
