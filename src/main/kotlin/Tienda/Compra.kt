@@ -22,13 +22,13 @@ fun main(args: Array<String>) {
     val pera = Perecedero("pera", -1.0, 3)
     val pollo = Perecedero("pollo", 10.3, 5)
     val pasta = NoPerecedero("colgate", 5.4, "Higiene")
-    val libro = NoPerecedero("Terminator", 15.3, "Ocio")
+    val pelicula = NoPerecedero("Terminator", 15.3, "Ocio")
     val compra = Compra()
     compra.comprar(manzana)
     compra.comprar(pera)
     compra.comprar(pollo)
     compra.comprar(pasta)
-    compra.comprar(libro)
-    println("-------\nFACTURA\n-------\n${manzana.nombre}........${manzana.calcular(1)}€\n${pera.nombre}........${pera.calcular(1)}€\n${pollo.nombre}........${pollo.calcular(1)}€\n${pasta.nombre}........${pasta.calcular(1)}€\n${libro.nombre}........${libro.calcular(1)}€\nTotal........${compra.calcularPrecio()}€")
+    compra.comprar(pelicula)
+    println("-------\nFACTURA\n-------\n${manzana.nombre}........${manzana.calcular(1)}€\n${pera.nombre}........${pera.calcular(1)}€\n${pollo.nombre}........${pollo.calcular(1)}€\n${pasta.nombre}........${pasta.calcular(1)}€\n${pelicula.nombre}........${pelicula.calcular(1)}€\nTotal........${compra.calcularPrecio()}€")
 }
  */

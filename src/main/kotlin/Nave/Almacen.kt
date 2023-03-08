@@ -144,14 +144,14 @@ fun main(args: Array<String>) {
     almacen.estanterias["A"] = lista
     almacen.estanterias["B"] = lista2
     almacen.mostrarInformacion(bebida1)
-    println("^^^^^^^^^^^^^^^^^^^^^^^^^^")
+    println("111111111111111111111111111")
     almacen.mostrarInformacion(bebida2)
-    println("^^^^^^^^^^^^^^^^^^^^^^^^^^")
+    println("222222222222222222222222222")
     almacen.mostrarInformacion(bebida3)
-    println("^^^^^^^^^^^^^^^^^^^^^^^^^^")
+    println("333333333333333333333333333")
     almacen.agregarAmenor(bebida3)
     almacen.mostrarEstanterias()
-    println("^^^^^^^^^^^^^^^^^^^^^^^^^^")
+    println("4444444444444444444444444444")
     almacen.agregarMismaMarca(bebida4)
     almacen.mostrarInformacion(bebida4)
     almacen.agregarMismaMarca(bebida5)
@@ -168,5 +168,7 @@ fun main(args: Array<String>) {
     println("El precio de la marca ${bebida1.marca} es ${almacen.precioMarca(bebida1)}€ por unidad")
     println("^^^^^^^^^^^^^^^^^^^^^^^^^^")
     println("El precio total del almacen es: ${almacen.precioTotal()}€")
+    almacen.borrarEstanteria("B")
+    almacen.mostrarEstanterias()
 }
  */
